@@ -6,6 +6,7 @@ Micro-service to manage the history for items authored in TIMS
 * Spring Boot
 * Spring Dev Tools
 * Gradle
+* 
 
 Installing Gradle separately is not required.  It is recommended
 to use the Gradle Wrapper.

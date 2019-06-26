@@ -1,0 +1,124 @@
+# --------------------------------------------------------
+# These properties are the local development properties.
+#
+# Spring boot uses this file when the application is launched
+# with the root of the project set as the working directory.
+# These properties take precedence over the classpath
+# application.yml.
+#
+# Using gradle from the commandline means the working
+# directory is by default the project root.
+#
+# Using Intellij you need to setup your run config so the
+# working directory is the project root.
+# --------------------------------------------------------
+server:
+  port: 8089
+
+security:
+  basic:
+    enabled: "${SECURITY_ENABLED:true}"
+  user:
+    name: "admin"
+    password: "admin"
+
+spring:
+  session:
+    enabled: "${SESSION_CLUSTER_ENABLED:true}"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/iat"
+    username: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+    validationQuery: "SELECT 1"
+    maxActive: 2
+  jpa:
+    hibernate:
+      ddl-auto: "validate"
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+  http:
+    multipart:
+      location: "${java.io.tmpdir}"
+      maxFileSize: "10MB"
+
+itembank:
+  host: "https://gitlab-dev.smarterbalanced.org"
+  accessToken: "${GITLAB_ACCESS_TOKEN}"
+  user: "${GITLAB_USER}"
+  password: "${GITLAB_PASSWORD}"
+  group: "${GITLAB_GROUP}"
+  localBaseDir: "${HOME}/ItemBank"
+  apiVersion: "/api/v4"
+  bankKey: "200"
+  systemVersion: "iat-41"
+  itemBankViewerUrl: "http://itemreview.smarterbalanced.org/iris/Pages/item.xhtml?bankId=${itembank.bankKey}&type=%s&id=%s"
+  systemUser:
+    userName: "iat-item-history-service@smarterbalanced.org"
+    fullName: "Item History Service"
+  enabled:
+    broker: true
+    database: true
+    consumer: true
+  aws:
+    endpointUrl: "https://s3.us-east-2.amazonaws.com"
+    region: "us-east-2"
+    bucketName: "${itembank.group}"
+    accessKey: "${IAT_AWS_ACCESS_KEY}"
+    secretKey: "${IAT_AWS_ACCESS_SECRET}"
+  events:
+    exchange: "iat_item_event_exchange"
+    queue:
+      queueName: "iat_history_event_queue"
+    errorQueue:
+      queueName: "iat_history_event_queue.dlq"
+
+tasks:
+  itemCleanupThresholdMillis: "7200000"
+  itemCleanupRunEveryMillis: "7200000"
+
+# cache expiration for things like workflow status
+cache:
+  expirationSeconds: 30
+
+logging:
+  level:
+    org.opentestsystem.ap.ihs: "debug"
+    org.opentestsystem.ap.common: "debug"
+
+---
+spring:
+  profiles: dev-rabbit
+  rabbitmq:
+    username: "fw-imrt"
+    password: "${IAT_RABBIT_PASSWORD}"
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+
+itembank:
+  group: "iat-development"
+
+---
+spring:
+  profiles: uat
+  datasource:
+    url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+
+itembank:
+  group: "iat-uat"
+
+---
+spring:
+  profiles: prod-mirror
+  datasource:
+    url: "jdbc:postgresql://tims-prod-mirror.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
+
+itembank:
+  group: "iat-prod-mirror"
+

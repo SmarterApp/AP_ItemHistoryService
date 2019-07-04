@@ -13,7 +13,7 @@
 # working directory is the project root.
 # --------------------------------------------------------
 server:
-  port: 8089
+  port: 8086
 
 security:
   basic:
@@ -66,6 +66,7 @@ itembank:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
     bucketName: "${itembank.group}"
+    versionedBucketName: "${itembank.group}-versioned"
     accessKey: "${IAT_AWS_ACCESS_KEY}"
     secretKey: "${IAT_AWS_ACCESS_SECRET}"
   events:
@@ -74,6 +75,7 @@ itembank:
       queueName: "iat_history_event_queue"
     errorQueue:
       queueName: "iat_history_event_queue.dlq"
+      eventKey: "error.history.iat.item.event.*"
 
 tasks:
   itemCleanupThresholdMillis: "7200000"

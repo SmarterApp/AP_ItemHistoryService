@@ -45,15 +45,8 @@ spring:
       maxFileSize: "10MB"
 
 itembank:
-  host: "https://gitlab-dev.smarterbalanced.org"
-  accessToken: "${GITLAB_ACCESS_TOKEN}"
-  user: "${GITLAB_USER}"
-  password: "${GITLAB_PASSWORD}"
-  group: "${GITLAB_GROUP}"
-  localBaseDir: "${HOME}/ItemBank"
-  apiVersion: "/api/v4"
-  bankKey: "200"
   systemVersion: "iat-41"
+  localBaseDir: "${HOME}/ItemHistoryService"
   itemBankViewerUrl: "http://itemreview.smarterbalanced.org/iris/Pages/item.xhtml?bankId=${itembank.bankKey}&type=%s&id=%s"
   systemUser:
     userName: "iat-item-history-service@smarterbalanced.org"
@@ -62,11 +55,14 @@ itembank:
     broker: true
     database: true
     consumer: true
+  services:
+      history:
+        url: "http://localhost:8086"
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
-    bucketName: "${itembank.group}"
-    versionedBucketName: "${itembank.group}-versioned"
+    bucketName: "${GITLAB_GROUP}"
+    versionedBucketName: "${GITLAB_GROUP}-versioned"
     accessKey: "${IAT_AWS_ACCESS_KEY}"
     secretKey: "${IAT_AWS_ACCESS_SECRET}"
   events:
@@ -104,7 +100,9 @@ spring:
     url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
 
 itembank:
-  group: "iat-development"
+  aws:
+    bucketName: "iat-development"
+    versionedBucketName: "iat-development-versioned"
 
 ---
 spring:
@@ -113,7 +111,9 @@ spring:
     url: "jdbc:postgresql://imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
 
 itembank:
-  group: "iat-uat"
+  aws:
+    bucketName: "iat-uat"
+    versionedBucketName: "iat-uat-versioned"
 
 ---
 spring:
@@ -122,5 +122,7 @@ spring:
     url: "jdbc:postgresql://tims-prod-mirror.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
 
 itembank:
-  group: "iat-prod-mirror"
+  aws:
+    bucketName: "iat-prod-mirror"
+    versionedBucketName: "iat-prod-mirror-versioned"
 

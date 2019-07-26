@@ -57,30 +57,6 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8086/api/v1/items/200229/versions/csv",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8086/api/v1/items/200229/versions/csv",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8086",
-					"path": [
-						"api",
-						"v1",
-						"items",
-						"200229",
-						"versions",
-						"csv"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "http://localhost:8086/api/v1/items/200229/history/d43c8d82-9ebf-4f45-a032-9952cd5b5d58",
 			"request": {
 				"method": "GET",

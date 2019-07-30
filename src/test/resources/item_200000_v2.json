@@ -1,0 +1,204 @@
+{
+  "id" : "200229",
+  "itsId" : "",
+  "type" : "sa",
+  "version" : "iat-41",
+  "asl" : {
+    "attachments" : [ {
+      "fileName" : "item_20000_ASL_STEM.mp4",
+      "section" : null,
+      "uploadedDate" : "2019-07-29T20:43:38.000Z"
+    }, {
+      "fileName" : "item_20000_ASL_STEM.webm",
+      "section" : null,
+      "uploadedDate" : "2019-07-29T20:43:39.000Z"
+    } ],
+    "isAslProvided" : true,
+    "isAslRequired" : "true"
+  },
+  "assignments" : [ ],
+  "audio" : {
+    "audioResources" : [ ]
+  },
+  "braille" : {
+    "attachments" : [ ],
+    "isBrailleProvided" : false,
+    "isBrailleRequired" : "undetermined"
+  },
+  "cc" : {
+    "attachments" : [ ],
+    "isCcProvided" : false,
+    "isCcRequired" : "undetermined",
+    "itemCcAudioAssociations" : [ ]
+  },
+  "core" : {
+    "attachments" : [ ],
+    "contentUpdateNeeds" : [ ],
+    "en" : {
+      "exemplarResponses" : [ ],
+      "isManagedByIat" : true,
+      "isProvided" : true,
+      "isRequired" : "true",
+      "prompt" : "<p>Item History Service test.</p><p>&nbsp;</p><p>First update.</p><p>&nbsp;</p><p>Second update.</p><p>&nbsp;</p><p>Third update.</p><p>Fourth update.</p>",
+      "rubrics" : [ ],
+      "updatedDate" : "2019-07-26T01:49:34.628Z"
+    },
+    "enemyItems" : [ ],
+    "metadata" : {
+      "accessibilityLanguageComplexity" : "",
+      "algebraDescriptor1" : "",
+      "algebraDescriptor2" : "",
+      "allowCalculator" : "",
+      "claim2Category" : "",
+      "claim2SubCategory" : "",
+      "contentTaskModel" : "",
+      "copyrightHolder" : "",
+      "copyrightHolderOther" : "",
+      "depthOfKnowledge" : "1",
+      "easyListeningFormula" : "",
+      "estimatedQuintile" : "",
+      "evidenceStatement" : "",
+      "intendedGrade" : "3",
+      "itemAuthor" : "",
+      "languageFeatures" : "",
+      "maxAllowedAnswers" : "0",
+      "maxAllowedAnswersPart2" : "0",
+      "maxAllowedAnswersRow" : "0",
+      "maxGrade" : "",
+      "maximumPoints" : "",
+      "meaningPurpose" : "",
+      "minGrade" : "",
+      "organizationName" : "",
+      "organizationTypeId" : "",
+      "performanceTask" : "",
+      "performanceTaskPosition" : "",
+      "presentationFormat" : [ ],
+      "primaryClaim" : "1",
+      "primaryCommonCoreStandard" : "",
+      "primaryContentDomain" : "",
+      "primaryEmphasis" : null,
+      "primaryMathematicalPractice" : "",
+      "primaryTarget" : "1",
+      "primaryTargetSet" : "",
+      "quaternaryClaim" : "",
+      "quaternaryCommonCoreStandard" : "",
+      "quaternaryContentDomain" : "",
+      "quaternaryMathematicalPractice" : "",
+      "quaternaryTarget" : "",
+      "readabilityFleschKincaid" : "",
+      "readabilityLexile" : "",
+      "scorePoints" : "",
+      "scoringEngine" : "",
+      "secondaryClaim" : "",
+      "secondaryCommonCoreStandard" : "",
+      "secondaryContentDomain" : "",
+      "secondaryMathematicalPractice" : "",
+      "secondaryTarget" : "",
+      "specificationsVersion" : "",
+      "stimulusFormat" : "",
+      "stimulusGenre" : "",
+      "stimulusLength" : "",
+      "stimulusLiteraryCategory" : "",
+      "stimulusLiteraryKnowledgeDemands" : "",
+      "stimulusName" : "",
+      "structure" : "",
+      "subject" : "ELA",
+      "tertiaryClaim" : "",
+      "tertiaryCommonCoreStandard" : "",
+      "tertiaryContentDomain" : "",
+      "tertiaryMathematicalPractice" : "",
+      "tertiaryTarget" : "",
+      "testCategory" : "",
+      "version" : "0.3",
+      "wordCount" : "",
+      "writingPurpose" : ""
+    },
+    "scoring" : {
+      "defaultScore" : 0,
+      "isManagedByIat" : true,
+      "machineScoringManagedByIat" : false,
+      "rubric" : "",
+      "rules" : [ ],
+      "variables" : [ ]
+    },
+    "stimulusId" : null,
+    "testAdministration" : {
+      "administrations" : [ ],
+      "fieldTestAdministrationId" : ""
+    },
+    "tutorialId" : null
+  },
+  "glossary" : {
+    "isEnglishGlossaryProvided" : false,
+    "isIllustratedGlossaryProvided" : false,
+    "isIllustratedGlossaryRequired" : "undetermined",
+    "isTranslatedGlossaryProvided" : false,
+    "isTranslatedGlossaryRequired" : "undetermined",
+    "terms" : [ ]
+  },
+  "images" : {
+    "imageResources" : [ ]
+  },
+  "importedPageLayout" : "",
+  "review" : {
+    "dataReview" : {
+      "facilitator" : {
+        "feedback" : "",
+        "feedbackComment" : "",
+        "username" : ""
+      },
+      "members" : [ ]
+    },
+    "educatorCommitteeReview" : {
+      "facilitator" : {
+        "feedback" : {
+          "feedback" : "",
+          "feedbackComment" : "",
+          "username" : ""
+        },
+        "passesAccessibilityQualityCriteria" : "",
+        "passesAccessibilityQualityCriteriaComment" : "",
+        "passesBiasAndSensitivityQualityCriteria" : "",
+        "passesBiasAndSensitivityQualityCriteriaComment" : "",
+        "passesContentQualityCriteria" : "",
+        "passesContentQualityCriteriaComment" : ""
+      },
+      "members" : [ ]
+    }
+  },
+  "serverManaged" : {
+    "id" : "200229",
+    "itsId" : "",
+    "primaryEnhancedId" : "",
+    "primaryLegacyId" : "",
+    "primaryLegacyV4Id" : "",
+    "quaternaryEnhancedId" : "",
+    "quaternaryLegacyId" : "",
+    "secondaryEnhancedId" : "",
+    "secondaryLegacyId" : "",
+    "tertiaryEnhancedId" : "",
+    "tertiaryLegacyId" : "",
+    "timsAttachmentsVersionId" : "nheVEpq3hNs19XF8GtBfRzasVLYiq5X3",
+    "type" : "sa",
+    "version" : "iat-41"
+  },
+  "textToSpeech" : {
+    "isSightTTSProvided" : false,
+    "isVisualTTSProvided" : false,
+    "isVisualTTSRequired" : "undetermined"
+  },
+  "translations" : {
+    "esp" : {
+      "exemplarResponses" : [ ],
+      "isManagedByIat" : true,
+      "isProvided" : false,
+      "isRequired" : "undetermined",
+      "prompt" : "",
+      "rubrics" : [ ],
+      "updatedDate" : "2019-07-25T17:54:16.154Z"
+    }
+  },
+  "workflow" : {
+    "workflowStatusCode" : "Draft"
+  }
+}

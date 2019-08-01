@@ -104,8 +104,6 @@ dependencies {
 
     compile 'org.postgresql:postgresql:42.2.4'
 
-//    compile 'io.github.java-diff-utils:java-diff-utils:4.0'
-
     compileOnly 'org.projectlombok:lombok'
 
     runtime 'org.springframework.boot:spring-boot-devtools'

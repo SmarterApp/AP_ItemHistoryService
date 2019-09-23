@@ -20,10 +20,70 @@ management:
 api:
   context-path: "/api"
 
+security:
+  basic:
+    enabled: \${SECURITY_ENABLED:true}
+
 spring:
   jackson:
     deserialization:
       fail_on_unknown_properties: false
     mapper:
       sort_properties_alphabetically: true
+  session:
+    enabled: \${SESSION_CLUSTER_ENABLED:true}
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/iat"
+    username: \${DB_USER}
+    password: \${DB_PASSWORD}
+    validationQuery: "SELECT 1"
+    maxActive: 2
+  jpa:
+    hibernate:
+      ddl-auto: "validate"
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+  http:
+    multipart:
+      location: \${java.io.tmpdir}
+      maxFileSize: "10MB"
 
+itembank:
+  systemVersion: "iat-41"
+  localBaseDir: \${HOME}/ItemHistoryService
+  itemBankViewerUrl: "http://itemreview.smarterbalanced.org/iris/Pages/item.xhtml?bankId=\${itembank.bankKey}&type=%s&id=%s"
+  systemUser:
+    userName: "iat-item-history-service@smarterbalanced.org"
+    fullName: "Item History Service"
+  enabled:
+    broker: true
+    database: true
+    consumer: true
+  services:
+    history:
+      url: "http://localhost:8086"
+  aws:
+    endpointUrl: "https://s3.us-east-2.amazonaws.com"
+    region: "us-east-2"
+    bucketName: \${GITLAB_GROUP}
+    versionedBucketName: \${GITLAB_GROUP}-versioned
+    accessKey: \${IAT_AWS_ACCESS_KEY}
+    secretKey: \${IAT_AWS_ACCESS_SECRET}
+  events:
+    exchange: "iat_item_event_exchange"
+    queue:
+      queueName: "iat_history_event_queue"
+    errorQueue:
+      queueName: "iat_history_event_queue.dlq"
+      eventKey: "error.history.iat.item.event.*"
+
+tasks:
+  itemCleanupThresholdMillis: "7200000"
+  itemCleanupRunEveryMillis: "7200000"
+
+# cache expiration for things like workflow status
+cache:
+  expirationSeconds: 30

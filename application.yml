@@ -49,14 +49,4 @@ itembank:
     bucketName: "iat-uat"
     versionedBucketName: "iat-uat-versioned"
 
----
-spring:
-  profiles: prod-mirror
-  datasource:
-    url: "jdbc:postgresql://tims-prod-mirror.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
-
-itembank:
-  aws:
-    bucketName: "iat-prod-mirror"
-    versionedBucketName: "iat-prod-mirror-versioned"
 

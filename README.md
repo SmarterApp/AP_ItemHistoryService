@@ -1,3 +1,6 @@
+# !!! IMPORTANT !!! - Archived
+This project has been archived and is no longer actively maintained.  All code has been migrated to the [TIMS project](https://github.com/SmarterApp/TIMS).
+
 # Assessment Production - Item History Service
 Micro-service to manage the history for items authored in TIMS
 
